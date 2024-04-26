@@ -39,7 +39,6 @@ public class BankStatementProcessor {
 		}
 		return amount;
 	}
-	
 
 	public double calculateTotalSpent() {
 		double amount = 0d;
