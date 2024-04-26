@@ -40,4 +40,14 @@ public class BankStatementProcessor {
 		return amount;
 	}
 	
+
+	public double calculateTotalSpent() {
+		double amount = 0d;
+		for (final BankTransaction bankTransaction : bankTransactions) {
+			if (bankTransaction.getAmount() < 0) {
+				amount += bankTransaction.getAmount();
+			}
+		}
+		return amount;
+	}
 }
