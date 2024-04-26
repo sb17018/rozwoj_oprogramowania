@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * 
+ */
+module RozwojOprogramowaniaWPraktyce{
+	requires junit;
+}
