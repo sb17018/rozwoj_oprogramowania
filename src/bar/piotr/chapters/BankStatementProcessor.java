@@ -1,5 +1,6 @@
 package bar.piotr.chapters;
 
+import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 
@@ -48,5 +49,20 @@ public class BankStatementProcessor {
 			}
 		}
 		return amount;
+	}
+	
+	public double findMaxInPeriod(LocalDate startDate, LocalDate endDate) {
+		
+		double maxValue = Double.MIN_VALUE;
+		
+		for (final BankTransaction bankTransaction : bankTransactions) {
+			if ((bankTransaction.getDate().isAfter(startDate)||bankTransaction.getDate().isEqual(startDate)) & (bankTransaction.getDate().isBefore(endDate)||bankTransaction.getDate().isEqual(endDate))) {
+				if(bankTransaction.getAmount() > maxValue) {
+					maxValue = bankTransaction.getAmount();
+				};
+			}
+		}
+		
+		return maxValue;
 	}
 }
